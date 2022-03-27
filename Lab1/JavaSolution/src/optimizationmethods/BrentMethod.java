@@ -10,16 +10,6 @@ public class BrentMethod {
     }
 
     public static double brent(double eps, double a, double c){
-        double x = countRatio(a, c);
-        double fx = myFunc(x);
-        double w = x;
-        double v = x;
-        double fw = fx;
-        double fv = fx;
-        double d = c - a;
-        double e = d;
-        while(c - a > eps){
-            
-        }
+        return 0;
     }
 }
