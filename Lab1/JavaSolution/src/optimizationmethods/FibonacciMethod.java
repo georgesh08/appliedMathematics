@@ -27,7 +27,7 @@ public class FibonacciMethod {
         double funcValue1 = myFunc(x1);
         double funcValue2 = myFunc(x2);
         System.out.println("Fibonacci:");
-        for(int i = 0; i < n; ++i){
+        for(int i = 0; i < n; i++){
             System.out.println(i + " | " + Math.abs(upperBound - lowerBound) + " | "
                     + Math.abs(upperBound - lowerBound)/prev);
             prev = Math.abs(upperBound - lowerBound);
@@ -43,6 +43,11 @@ public class FibonacciMethod {
                 x1 = lowerBound + (upperBound - x2);
                 funcValue2 = funcValue1;
                 funcValue1 = myFunc(x1);
+            } else {
+                x1 = countX1Fib(lowerBound, upperBound, i);
+                x2 = countX2Fib(lowerBound, upperBound, i);
+                funcValue1 = myFunc(x1);
+                funcValue2 = myFunc(x2);
             }
         }
         return (lowerBound + upperBound) / 2;
