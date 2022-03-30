@@ -21,7 +21,7 @@ public class FibonacciMethod {
     }
 
     public static double fibonacci(double lowerBound, double upperBound, int n){
-        double prev = 1;
+        double prev = 1, funcCalls = 2;
         double x1 = countX1Fib(lowerBound, upperBound, n);
         double x2 = countX2Fib(lowerBound, upperBound, n);
         double funcValue1 = myFunc(x1);
@@ -37,19 +37,23 @@ public class FibonacciMethod {
                 x2 = upperBound - (x1 - lowerBound);
                 funcValue1 = funcValue2;
                 funcValue2 = myFunc(x2);
+                funcCalls++;
             } else if (funcValue2 > funcValue1){
                 upperBound = x2;
                 x2 = x1;
                 x1 = lowerBound + (upperBound - x2);
                 funcValue2 = funcValue1;
                 funcValue1 = myFunc(x1);
+                funcCalls++;
             } else {
                 x1 = countX1Fib(lowerBound, upperBound, i);
                 x2 = countX2Fib(lowerBound, upperBound, i);
                 funcValue1 = myFunc(x1);
                 funcValue2 = myFunc(x2);
+                funcCalls += 2;
             }
         }
+        System.out.println("\nFibonacci iterations: " + n + "\nFunc calls: " + funcCalls + "\n");
         return (lowerBound + upperBound) / 2;
     }
 }

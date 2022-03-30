@@ -19,7 +19,9 @@ public class BrentMethod {
         double e = d;
         double g;
         double u = 0, fu;
+        double counter = 0, funcCalls = 1;
         while (c - a > eps) {
+            counter++;
             g = e;
             e = d;
             if (x != w && w != v && x != v && fx != fv && fx != fw && fw != fv) {
@@ -37,6 +39,7 @@ public class BrentMethod {
                 }
             }
             fu = myFunc(u);
+            funcCalls++;
             if (fu <= fx) {
                 if (u >= x) {
                     a = x;
@@ -66,6 +69,7 @@ public class BrentMethod {
                 }
             }
         }
-        return (a + c) / 2;
+        System.out.println("\nBrent iterations: " + counter + "\nFunc calls: " + funcCalls + "\n");
+        return (a + c)/2;
     }
 }

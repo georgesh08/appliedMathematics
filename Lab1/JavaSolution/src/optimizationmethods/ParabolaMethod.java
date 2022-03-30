@@ -16,9 +16,12 @@ public class ParabolaMethod {
         double funcValue3 = myFunc(x3);
         double u;
         double funcValueU;
+        double counter = 0, funcCalls = 3;
         while(x3 - x1 > eps){
+            counter++;
             u = findX(x1, x2, x3, funcValue1, funcValue2, funcValue3);
             funcValueU = myFunc(u);
+            funcCalls++;
             if(x2 <= u) {
                 if(funcValue2 <= funcValueU){
                     x3 = u;
@@ -44,6 +47,7 @@ public class ParabolaMethod {
                 }
             }
         }
-        return (x1 + x3) / 2;
+        System.out.println("\nParabola iterations: " + counter + "\nFunc calls: " + funcCalls + "\n");
+        return (x1 + x3)/2;
     }
 }

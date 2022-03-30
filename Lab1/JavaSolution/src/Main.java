@@ -10,7 +10,7 @@ public class Main {
         double res1 = goldenRatio(1e-3, 6, 9);
         double res2 = fibonacci(6, 9, 19);
         double res3 = parabola(1e-3, 6, 9);
-        double res4 = brent(1e-3, 3, 13);
+        double res4 = brent(1e-3, 6, 9);
         System.out.println("Dichotomy result: " + res);
         System.out.println("Golden ratio result: " + res1);
         System.out.println("Fibonacci result: " + res2);
